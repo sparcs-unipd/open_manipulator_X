@@ -1,7 +1,7 @@
 controller_manager:
   ros__parameters:
     use_sim_time: False
-    update_rate: 1000  # Hz
+    update_rate: 100  # Hz
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -21,9 +21,9 @@ arm_controller:
   ros__parameters:
     joints:
       - joint1
-      - joint2
-      - joint3
-      - joint4
+      #- joint2
+      #- joint3
+      #- joint4
 
     interface_name: position
     
@@ -50,16 +50,16 @@ arm_controller_effort:
   ros__parameters:
     joints:
       - joint1
-      - joint2
-      - joint3
-      - joint4
+      #- joint2
+      #- joint3
+      #- joint4
 
 
-gripper_controller:
-  ros__parameters:
-    joint: gripper_left_joint
-    state_interfaces:
-      - position
-    command_interfaces:
-      - position
-    conversion_factor: 0.0001
+#gripper_controller:
+#  ros__parameters:
+#    joint: gripper_left_joint
+#    state_interfaces:
+#      - position
+#    command_interfaces:
+#      - position
+#    conversion_factor: 0.0001

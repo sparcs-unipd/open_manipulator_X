@@ -16,7 +16,13 @@
   <!-- Import URDF -->
   <xacro:include filename="$(find open_manipulator_x_description)/urdf/open_manipulator_x.urdf.xacro" />
 
+<!--
   <xacro:include filename="$(find open_manipulator_x_description)/ros2_control/open_manipulator_x_system.ros2_control.xacro" />
+  -->
+  
+  <!--Added for the single motor effort control -->
+ <xacro:include filename="$(find open_manipulator_x_description)/ros2_control/testFile.ros2_control.xacro" />
+
 
   <xacro:open_manipulator_x prefix="$(arg prefix)" />
   <xacro:open_manipulator_x_gazebo prefix="$(arg prefix)" />
@@ -27,10 +33,10 @@
     port_name="$(arg port_name)"/>
 
   <gazebo>
-    <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="gz_ros2_control-system">
+   <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="gz_ros2_control-system">
       <parameters>$(find open_manipulator_x_bringup)/config/gz_controller_manager.yaml</parameters>
     </plugin>
-    
+   
   </gazebo>
 
   <!-- World -->
